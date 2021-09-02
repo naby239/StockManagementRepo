@@ -1,0 +1,39 @@
+<div class="container" style="padding: 20px;">
+    <div class="row">
+        <section class="col-3">
+            <h5 class="text-warning ml-3">Sort</h5>
+            <select class="custom-select mb-3" (change)="onSortSelected($event.target.value)">
+                <option *ngFor="let sort of sortOptions"
+                [value]="sort.value">
+                  {{sort.name}}  
+                </option>
+            </select>
+        </section>
+        <section class="col-9">
+            <div class="d-flex justify-content-between align-items-center pb-2">
+                <button class="btn btn-primary" routerLink="/stock/editadd">Add Stock Item</button>
+                <header *ngIf="pagination">
+                    <span>Showing <strong>{{pagination.currentCount}}</strong> of <strong>{{pagination.totalCount}}</strong> Results</span>
+                </header>
+                <div class="form-inline mt-2">
+                    <input class="form-control mr-2" style="width: 300px;" placeholder="Search" type="text" (keyup)="onSearch($event.target.value)">
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col" *ngFor="let item of stockItems">
+                    <app-stock-item [stockItem]="item"></app-stock-item>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-5" *ngIf="pagination">
+                <pagination [boundaryLinks]="true" [totalItems]="pagination.totalCount"
+                [itemsPerPage]="pagination.pageSize"
+                (pageChanged)="pageChanged($event)"
+                previousText="&lsaquo;" nextText="&rsaquo;"
+                    firstText="&laquo;" lastText="&raquo;">
+
+                </pagination>
+            </div>
+        </section>
+    </div>
+</div>

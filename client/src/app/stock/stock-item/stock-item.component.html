@@ -1,0 +1,85 @@
+<div class="card shadow-sm" style="max-height: 400px; min-height: 400px;">
+  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+  <img [src]='getImage(this.stockItem.stockImages)' />
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-5">
+        <small class="text-muted"><strong style="color: black;">Make</strong></small>
+      </div>
+      <div class="col-md-1">
+        <small class="text-muted"><strong style="color: black;">: </strong></small>
+      </div>
+      <div class="col-md-6">
+        <small class="text-muted">{{this.stockItem.make}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <small class="text-muted"><strong style="color: black;">Model</strong></small>
+      </div>
+      <div class="col-md-1">
+        <small class="text-muted"><strong style="color: black;">: </strong></small>
+      </div>
+      <div class="col-md-6">
+        <small class="text-muted">{{this.stockItem.model}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <small class="text-muted"><strong style="color: black;">Mileage</strong></small>
+      </div>
+      <div class="col-md-1">
+        <small class="text-muted"><strong style="color: black;">: </strong></small>
+      </div>
+      <div class="col-md-6">
+        <small class="text-muted">{{this.stockItem.mileage}} km</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <small class="text-muted"><strong style="color: black;">Year</strong></small>
+      </div>
+      <div class="col-md-1">
+        <small class="text-muted"><strong style="color: black;">: </strong></small>
+      </div>
+      <div class="col-md-6">
+        <small class="text-muted">{{this.stockItem.modelYear}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <small class="text-muted"><strong style="color: black;">Retail Price</strong></small>
+      </div>
+      <div class="col-md-1">
+        <small class="text-muted"><strong style="color: black;">: </strong></small>
+      </div>
+      <div class="col-md-6">
+        <small class="text-muted">R {{this.stockItem.retailPrice}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <small class="text-muted"><strong style="color: black;">Cost Price</strong></small>
+      </div>
+      <div class="col-md-1">
+        <small class="text-muted"><strong style="color: black;">: </strong></small>
+      </div>
+      <div class="col-md-6">
+        <small class="text-muted">R {{this.stockItem.costPrice}}</small>
+      </div>
+    </div>    
+    <div>
+      <div class="btn-group" style="float: right; padding-left: 10px;">
+        <a href="javascript:void(0)" (click)="deleteStockItem(this.stockItem.id)">
+          <i class="fa fa-trash" style="font-size:20px;color:black;" title="Edit"></i>
+        </a>
+      </div>
+      <div class="btn-group" style="float: right;">
+        <a href="javascript:void(0)" routerLink="/stock/editadd/{{this.stockItem.id}}">
+          <i class="fa fa-pencil" style="font-size:20px;color:black;" title="Edit"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

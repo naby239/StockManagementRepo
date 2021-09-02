@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-label-group"></div>
+        <input class="form-control form-control-sm" type="text"
+        [value]="this.name"
+        (keyup)="setName($event)"
+        placeholder="Accessory Name">
+    </div>
+    <div class="col-md-8">
+        <textarea placeholder="Description" [value]="this.description" (keyup)="setDescription($event)" rows="3" style="width:100%;"></textarea>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-8"></div>
+        <div class="col-md-2" ><button class="btn btn-primary warning"  (click)="cancel()" >Cancel</button></div>
+        <div class="col-md-2"><button class="btn btn-primary"  (click)="addAccessory()" [disabled]="this.name === '' || this.description === ''">Save</button></div>
+    </div>
+</div>
